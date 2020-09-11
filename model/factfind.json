@@ -1,0 +1,81 @@
+{
+  "module": {
+    "id": 1,
+    "parent": null,
+    "type": "FactFind",
+    "order": 1
+  },
+  "data": {
+    "header": null
+  },
+  "children": [
+    {
+      "module": {
+        "id": 2,
+        "parent": 1,
+        "type": "Tab",
+        "order": 1
+      },
+      "data": {
+        "header": "Tab Title"
+      },
+      "children": [
+        {
+          "module": {
+            "id": 3,
+            "parent": 2,
+            "type": "Section",
+            "order": 1
+          },
+          "data": {
+            "header": "Section Title"
+          },
+          "children": [
+            {
+              "module": {
+                "id": 4,
+                "parent": 3,
+                "type": "Paragraph",
+                "order": 1
+              },
+              "data": {
+                "id": "paragraph",
+                "value": "This is a bit of paragraph text."
+              }
+            },
+            {
+              "module": {
+                "id": 5,
+                "parent": 3,
+                "type": "Input",
+                "order": 2
+              },
+              "data": {
+                "id": "input",
+                "label": "Input label",
+                "defaultValue": "Row 2"
+              }
+            },
+            {
+              "module": {
+                "id": 6,
+                "parent": 3,
+                "type": "Select",
+                "order": 2
+              },
+              "data": {
+                "id": "theSelect",
+                "label": "Json data label",
+                "defaultValue": "Row 2",
+                "options": [
+                  {"label": "Row 1", "value": 1},
+                  {"label": "Row 2", "disabled": true}
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
