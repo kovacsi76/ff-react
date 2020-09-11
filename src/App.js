@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import './App.css';
 import WithLoading from './components/hocs/WithLoading';
 import Module from './components/Module';
+import FactfindData from './data/factfind.json';
 
 const EmptyWithLoading = WithLoading(null);
 
@@ -14,13 +15,14 @@ class App extends PureComponent {
   componentDidMount() {
     setTimeout(
       async () => {
-        const response = await fetch('model/factfind.json');
-        console.log(response);
-        if (!response.ok) {
-          return false;
-        }
-        console.log(await response.json());
-        const data = await response.json();
+        // const response = await fetch('model/factfind.json');
+        // console.log(response);
+        // if (!response.ok) {
+        //   return false;
+        // }
+        // console.log(await response.json());
+        // const data = await response.json();
+        const data = FactfindData;
         this.setState({
           loading: false,
           data: data || {}
