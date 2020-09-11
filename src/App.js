@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { PureComponent } from 'react';
 import './App.css';
+import WithLoading from './components/hocs/WithLoading';
+import Module from './components/Module';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const EmptyWithLoading = WithLoading(null);
+
+class App extends PureComponent {
+  state = {
+    loading: true,
+    data: null
+  };
+
+  componentDidMount() {
+    setTimeout(
+      async () => {
+        const response = await fetch('model/factfind.json');
+        console.log(response);
+        if (!response.ok) {
+          return false;
+        }
+        console.log(await response.json());
+        const data = await response.json();
+        this.setState({
+          loading: false,
+          data: data || {}
+        });
+      },
+      2000
+    );
+  }
+
+  render() {
+    if (this.state.loading) {
+      return <EmptyWithLoading isLoading={this.state.loading} />;
+    }
+
+    return (
+      <Module
+        modules={[this.state.data]}
+      />
+    );
+  }
 }
 
 export default App;
