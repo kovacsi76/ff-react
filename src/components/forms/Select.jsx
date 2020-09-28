@@ -1,26 +1,27 @@
 import React from 'react'
-import SelectOption from './SelectOption'
+import { SelectOption } from './SelectOption'
 
-export default function Select(props) {
-  if (!props.options) {
-    return null;
+export const Select = props => {
+  if (!props.data.options) {
+    return <p>Options array missing.</p>;
   }
-  if (!props.options.length) {
-    return <p>No options.</p>
+  if (!props.data.options.length) {
+    return <p>Options array empty.</p>
   }
 
   return (
     <select
-      id={props.id || "select"}
-      name={props.name || "select"}
-      defaultValue={props.defaultValue || ""}
+      id={props.data.id || "select"}
+      name={props.data.name || "select"}
+      defaultValue={props.data.defaultValue || ""}
       // value={props.value || ""}
-      required={props.required || false}
-      disabled={props.disabled || false}
-      multiple={props.multiple || false}
-      size={props.size || 0}
+      required={props.data.required || false}
+      disabled={props.data.disabled || false}
+      multiple={props.data.multiple || false}
+      size={props.data.size || 0}
+      className={props.className || "select"}
     >
-      {props.options.map(option => (
+      {props.data.options.map(option => (
         <SelectOption
           key={option.id || option.label}
           {...option}
@@ -28,4 +29,4 @@ export default function Select(props) {
       ))}
     </select>
   );
-}
+};

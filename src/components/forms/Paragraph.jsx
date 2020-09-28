@@ -1,12 +1,11 @@
 import React from 'react'
 
-export default function Paragraph(props) {
-  return (
-    <p
-      id={props.id || "paragraph"}
-      name={props.name || "paragraph"}
-    >
-      {props.value || ""}
-    </p>
-  );
-}
+export const Paragraph = props => (
+  <p
+    id={props.data.id || "paragraph"}
+    name={props.data.name || "paragraph"}
+    className={props.className || "paragraph"}
+  >
+    {props.data.value || ""}
+  </p>
+);

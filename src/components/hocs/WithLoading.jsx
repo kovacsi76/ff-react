@@ -1,17 +1,13 @@
 import React from 'react';
 
-function WithLoading(WrappedComponent) {
-  return function WithLoadingComponent(props) {
-    const { isLoading, form, ...passThroughProps } = props;
+export const WithLoading = WrappedComponent => props => {
+  const { isLoading, ...restProps } = props;
 
-    if (!isLoading) {
-      return WrappedComponent === null
-        ? null
-        : <WrappedComponent {...form} {...passThroughProps} />;
-    }
+  if (!isLoading) {
+    return WrappedComponent === null
+      ? null
+      : <WrappedComponent {...restProps} />;
+  }
 
-    return <p>Hold on, fetching data might take some time.</p>;
-  };
-}
-
-export default WithLoading;
+  return <p>Hold on, fetching data might take some time...</p>;
+};

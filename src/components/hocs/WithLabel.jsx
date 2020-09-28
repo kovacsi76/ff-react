@@ -1,21 +1,41 @@
 import React from 'react';
 
-function WithLabel(WrappedComponent) {
-  return function WithLabelComponent(props) {
-    const { label, ...passThroughProps } = props;
-    console.log("wla", label, passThroughProps);
+export const WithLabel = WrappedComponent => props => {
+  const { label, ...restProps } = props;
 
-    if (!label) {
-      return <WrappedComponent {...passThroughProps} />;
-    }
+  if (!label) {
+    return <WrappedComponent {...restProps} />;
+  }
 
-    return (
-      <label htmlFor={passThroughProps.id}>
-        <span>{label}</span>
-        <WrappedComponent {...passThroughProps} />
-      </label>
+  const labelProps = {};
+  labelProps.className = label.position;
+  
+  let LabelWrapper = "span";
+  if (["top", "bottom"].includes(label.position)) {
+    LabelWrapper = "div";
+  }
+  const labelText = <LabelWrapper>{label.text}</LabelWrapper>;
+
+  let labelContent = null;
+  if (["bottom", "right"].includes(label.position)) {
+    labelContent = (
+      <>
+        <WrappedComponent {...restProps} />
+        {labelText}
+      </>
     );
-  };
-}
+  } else {
+    labelContent = (
+      <>
+        {labelText}
+        <WrappedComponent {...restProps} />
+      </>
+    );
+  }
 
-export default WithLabel;
+  return (
+    <label htmlFor={restProps.data.id} {...labelProps}>
+      {labelContent}
+    </label>
+  );
+};

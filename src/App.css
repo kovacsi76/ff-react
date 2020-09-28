@@ -1,38 +1,58 @@
-.App {
+.module {
+  margin: 5px;
+}
+
+.module.Button, .module.Input, .module.Select {
+  display: flex;
+  flex: auto;
+  flex-flow: row wrap;
+}
+
+.module.FactFind {
+  margin: 0;
+}
+
+.module.FactFind > header {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.module.Section {
+  background: #eee;
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.module.Tab > ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.module.Tab > ul > li {
+  background: yellow;
+  border: 1px solid blue;
+  border-radius: 10px 10px 0 0;
+  display: inline-block;
+  margin: 0 0 0 5px;
+  padding: 5px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header {
+  background: pink;
+  padding: 5px;
+  text-align: left;
+}
+
+.module.Tab > header {
+  background: yellow;
+  border: 1px solid blue;
+  border-radius: 10px 10px 0 0;
+  display: inline-block;
+  margin: 5px;
+}
+
+label > * {
+  margin: 5px;
 }
