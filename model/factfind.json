@@ -1,12 +1,17 @@
 {
   "module": {
-    "id": 1,
+    "id": "factfind1",
     "parent": null,
     "type": "FactFind",
-    "order": 1
+    "order": 1,
+    "class": ""
   },
   "data": {
-    "header": null
+    "header": "Find Find Title"
+  },
+  "relation": {
+  },
+  "validation": {
   },
   "children": [
     {
@@ -17,61 +22,389 @@
         "order": 1
       },
       "data": {
-        "header": "Tab Title"
+        "items": [
+          {
+            "id": "tabItem1",
+            "order": 1,
+            "value": "Tab 1",
+            "link": "tabPane1"
+          },
+          {
+            "id": "tabItem2",
+            "order": 2,
+            "value": "Tab 2",
+            "link": "tabPane2"
+          },
+          {
+            "id": "tabItem3",
+            "order": 3,
+            "value": "Tab 3",
+            "link": "tabPane3"
+          }
+        ]
+      },
+      "relation": {
+      },
+      "validation": {
       },
       "children": [
         {
           "module": {
-            "id": 3,
-            "parent": 2,
-            "type": "Section",
-            "order": 1
+            "id": 2,
+            "parent": 1,
+            "type": "TabPane",
+            "order": 1,
+            "name": "tabPane1"
           },
           "data": {
-            "header": "Section Title"
+          },
+          "relation": {
+          },
+          "validation": {
           },
           "children": [
             {
               "module": {
-                "id": 4,
-                "parent": 3,
-                "type": "Paragraph",
+                "id": 3,
+                "parent": 2,
+                "type": "Section",
                 "order": 1
               },
               "data": {
-                "id": "paragraph",
-                "value": "This is a bit of paragraph text."
-              }
-            },
+                "header": "Section Title"
+              },
+              "relation": {
+              },
+              "validation": {
+              },
+              "children": [
+                {
+                  "module": {
+                    "id": 4,
+                    "parent": 3,
+                    "type": "Paragraph",
+                    "order": 1
+                  },
+                  "data": {
+                    "id": "paragraph4",
+                    "disabled": false,
+                    "value": "This is a bit of paragraph text."
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                },
+                {
+                  "module": {
+                    "id": 5,
+                    "parent": 3,
+                    "type": "Input",
+                    "order": 2
+                  },
+                  "data": {
+                    "id": "input5",
+                    "disabled": false,
+                    "type": "text",
+                    "defaultValue": "Row 2"
+                  },
+                  "label": {
+                    "text": "Top Input label",
+                    "position": "top"
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                },
+                {
+                  "module": {
+                    "id": 6,
+                    "parent": 3,
+                    "type": "Select",
+                    "order": 2
+                  },
+                  "data": {
+                    "id": "theSelect6",
+                    "disabled": false,
+                    "defaultValue": "Row 2",
+                    "options": [
+                      {"label": "Row 1", "value": 1},
+                      {"label": "Row 2", "disabled": true}
+                    ]
+                  },
+                  "label": {
+                    "text": "Bottom Select label",
+                    "position": "bottom"
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                },
+                {
+                  "module": {
+                    "id": 7,
+                    "parent": 3,
+                    "type": "Button",
+                    "order": 3
+                  },
+                  "data": {
+                    "id": "theButton7",
+                    "disabled": false,
+                    "type": "submit",
+                    "value": "Press me"
+                  },
+                  "label": {
+                    "text": "Right Button label",
+                    "position": "right"
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module": {
+            "id": 12,
+            "parent": 1,
+            "type": "TabPane",
+            "order": 1,
+            "name": "tabPane2"
+          },
+          "data": {
+          },
+          "relation": {
+          },
+          "validation": {
+          },
+          "children": [
             {
               "module": {
-                "id": 5,
-                "parent": 3,
-                "type": "Input",
-                "order": 2
+                "id": 13,
+                "parent": 12,
+                "type": "Section",
+                "order": 1
               },
               "data": {
-                "id": "input",
-                "label": "Input label",
-                "defaultValue": "Row 2"
-              }
-            },
+                "header": "Section Title"
+              },
+              "relation": {
+              },
+              "validation": {
+              },
+              "children": [
+                {
+                  "module": {
+                    "id": 14,
+                    "parent": 13,
+                    "type": "Paragraph",
+                    "order": 1
+                  },
+                  "data": {
+                    "id": "paragraph14",
+                    "disabled": true,
+                    "value": "This is a bit of paragraph text."
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                },
+                {
+                  "module": {
+                    "id": 15,
+                    "parent": 13,
+                    "type": "Input",
+                    "order": 2
+                  },
+                  "data": {
+                    "id": "input15",
+                    "disabled": true,
+                    "type": "text",
+                    "defaultValue": "Row 2"
+                  },
+                  "label": {
+                    "text": "Input Disabled label",
+                    "position": "top"
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                },
+                {
+                  "module": {
+                    "id": 16,
+                    "parent": 13,
+                    "type": "Select",
+                    "order": 2
+                  },
+                  "data": {
+                    "id": "theSelect16",
+                    "disabled": true,
+                    "defaultValue": "Row 2",
+                    "options": [
+                      {"label": "Row 1", "value": 1},
+                      {"label": "Row 2", "disabled": true}
+                    ]
+                  },
+                  "label": {
+                    "text": "Select Disabled label",
+                    "position": "bottom"
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                },
+                {
+                  "module": {
+                    "id": 17,
+                    "parent": 13,
+                    "type": "Button",
+                    "order": 3
+                  },
+                  "data": {
+                    "id": "theButton17",
+                    "disabled": true,
+                    "type": "submit",
+                    "value": "Press me"
+                  },
+                  "label": {
+                    "text": "Button Disabled label",
+                    "position": "right"
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "module": {
+            "id": 22,
+            "parent": 1,
+            "type": "TabPane",
+            "order": 1,
+            "name": "tabPane3"
+          },
+          "data": {
+          },
+          "relation": {
+          },
+          "validation": {
+          },
+          "children": [
             {
               "module": {
-                "id": 6,
-                "parent": 3,
-                "type": "Select",
-                "order": 2
+                "id": 23,
+                "parent": 22,
+                "type": "Section",
+                "order": 1
               },
               "data": {
-                "id": "theSelect",
-                "label": "Json data label",
-                "defaultValue": "Row 2",
-                "options": [
-                  {"label": "Row 1", "value": 1},
-                  {"label": "Row 2", "disabled": true}
-                ]
-              }
+                "header": "Section Title"
+              },
+              "relation": {
+              },
+              "validation": {
+              },
+              "children": [
+                {
+                  "module": {
+                    "id": 24,
+                    "parent": 23,
+                    "type": "Paragraph",
+                    "order": 1
+                  },
+                  "data": {
+                    "id": "paragraph24",
+                    "disabled": true,
+                    "value": "This is a bit of paragraph text."
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                },
+                {
+                  "module": {
+                    "id": 25,
+                    "parent": 23,
+                    "type": "Input",
+                    "order": 2
+                  },
+                  "data": {
+                    "id": "input25",
+                    "disabled": true,
+                    "type": "text",
+                    "defaultValue": "Row 2"
+                  },
+                  "label": {
+                    "text": "Input label",
+                    "position": "top"
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                },
+                {
+                  "module": {
+                    "id": 26,
+                    "parent": 23,
+                    "type": "Select",
+                    "order": 2
+                  },
+                  "data": {
+                    "id": "theSelect26",
+                    "disabled": true,
+                    "defaultValue": "Row 2",
+                    "options": [
+                      {"label": "Row 1", "value": 1},
+                      {"label": "Row 2", "disabled": true}
+                    ]
+                  },
+                  "label": {
+                    "text": "Json data label",
+                    "position": "bottom"
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                },
+                {
+                  "module": {
+                    "id": 27,
+                    "parent": 23,
+                    "type": "Button",
+                    "order": 3
+                  },
+                  "data": {
+                    "id": "theButton27",
+                    "disabled": false,
+                    "type": "submit",
+                    "value": "Press me"
+                  },
+                  "label": {
+                    "text": "Button data label",
+                    "position": "right"
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                }
+              ]
             }
           ]
         }
