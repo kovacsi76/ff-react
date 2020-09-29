@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './App.css';
+import './App.scss';
 import { FactFind } from './containers/FactFind';
 import * as serviceWorker from './serviceWorker';
 
