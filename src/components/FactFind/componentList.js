@@ -2,6 +2,7 @@
 import { FactFind } from '../layouts/FactFind/FactFind'
 import { Section } from '../layouts/FactFind/Section'
 import { Tab } from '../layouts/FactFind/Tab'
+import { TabPane } from '../layouts/FactFind/TabPane'
 import { Button } from '../forms/Button'
 import { Input } from '../forms/Input'
 import { Paragraph } from '../forms/Paragraph'
@@ -11,6 +12,7 @@ export const componentList = {
   FactFind,
   Section,
   Tab,
+  TabPane,
   Button,
   Input,
   Paragraph,

@@ -1,16 +1,13 @@
 import React from 'react';
 
 export const WithModule = WrappedComponent => props => {
-  const { children, module, ...restProps } = props;
+  const { module, ...restProps } = props;
 
   const returnElement = (
-    <>
-      {WrappedComponent ? <WrappedComponent {...restProps} /> : null}
-      {children}
-    </>
+    WrappedComponent ? <WrappedComponent {...restProps} /> : null
   );
 
-  if (!module) {
+  if (!module || module.noRender) {
     return returnElement;
   }
 

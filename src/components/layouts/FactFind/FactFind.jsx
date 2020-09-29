@@ -1,5 +1,8 @@
 import React from 'react'
 
-export const FactFind = ({data, ...restProps}) => (
-  <header>{data.header}</header>
+export const FactFind = ({data, children, ...restProps}) => (
+  <>
+    <header>{data.header}</header>
+    {children}
+  </>
 );
