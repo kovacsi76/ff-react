@@ -53,6 +53,120 @@ header {
   margin: 5px;
 }
 
-label > * {
+label > *:not(.LabelTextWrapper):not(.Tooltip) {
   margin: 5px;
+}
+
+label.left .LabelTextWrapper, label.right .LabelTextWrapper {
+  display: inline-block;
+}
+
+
+
+// Everything below copied from Webapp
+
+$space: 16px;
+$dark-grey: #595959;
+$white: #ffffff;
+$blue-3: #C3C2D6;
+
+.m-tooltip {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  z-index: 550;
+
+  &:hover {
+    overflow: visible;
+  }
+}
+
+.m-tooltip--small .c-icon--info {
+  background-size: auto 70%;
+  width: $space; // 16px
+  height: $space; // 16px
+}
+
+.m-tooltip__msg {
+  box-shadow: 0 0 20px rgba(0,0,0,0.18);
+  color: $dark-grey;
+  font-weight: 400;
+  padding: $space/2;
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  text-align: left;
+  transform: translateY(-50%);
+  transition: all .3s ease-in-out;
+  z-index: 1;
+
+  &:after {
+      content: " ";
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  .m-tooltip:hover &,
+  .m-tooltip:focus & {
+      opacity: 1;
+  }
+}
+
+// Message appears to the right of the "trigger" element
+@mixin messageRight {
+  left: calc(100% + 8px);
+
+  &:after {
+      border-right: 5px solid $white;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      left: -5px;
+  }
+}
+.m-tooltip__msg--right-all {
+  @include messageRight;
+
+  .m-tooltip__trigger:hover + &,
+  .m-tooltip__trigger:focus + & {
+      left: calc(100% + 16px);
+  }
+}
+
+// Message appears to the left of the "trigger" element
+@mixin messageLeft {
+  right: calc(100% + 8px);
+
+  &:after {
+      border-left: 5px solid $white;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      right: -5px;
+  }
+}
+
+.m-tooltip__msg--left-all {
+  @include messageLeft;
+
+  .m-tooltip__trigger:hover + &,
+  .m-tooltip__trigger:focus + & {
+      right: calc(100% + 16px);
+  }
+}
+
+.c-icon--info {
+  background: $blue-3 url('/img/icons/info--white.svg') center center no-repeat;
+  border-radius: 100px;
+  display: block;
+  width: $space*1.5; // 24px
+  height: $space*1.5; // 24px
+}
+
+.m-tooltip--small .c-icon--info {
+  background-size: auto 70%;
+  width: $space; // 16px
+  height: $space; // 16px
 }

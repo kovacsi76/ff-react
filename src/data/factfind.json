@@ -159,6 +159,10 @@
                     "text": "Right Button label",
                     "position": "right"
                   },
+                  "tooltip": {
+                    "text": "Button Tooltip",
+                    "position": "right"
+                  },
                   "relation": {
                   },
                   "validation": {
