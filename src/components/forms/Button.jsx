@@ -8,6 +8,7 @@ export const Button = props => (
     required={props.data.required || false}
     disabled={props.data.disabled || false}
     className={props.className || "button"}
+    onClick={props.onClick}
   >
     {props.data.value || ""}
   </button>
