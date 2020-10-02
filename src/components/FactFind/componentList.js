@@ -1,8 +1,8 @@
 
 import { FactFind } from '../layouts/FactFind/FactFind'
 import { Section } from '../layouts/FactFind/Section'
-import { Tab } from '../layouts/FactFind/Tab'
-import { TabPane } from '../layouts/FactFind/TabPane'
+import { Tab } from '../layouts/FactFind/Tab/index'
+import { TabPane } from '../layouts/FactFind/Tab/TabPane'
 import { Button } from '../forms/Button'
 import { Input } from '../forms/Input'
 import { Paragraph } from '../forms/Paragraph'
