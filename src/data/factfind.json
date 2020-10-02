@@ -348,9 +348,8 @@
                   },
                   "data": {
                     "id": "input25",
-                    "disabled": true,
                     "type": "text",
-                    "defaultValue": "Row 2"
+                    "defaultValue": ""
                   },
                   "label": {
                     "text": "Input label",

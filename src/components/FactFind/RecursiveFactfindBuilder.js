@@ -5,8 +5,12 @@ import { WithModule } from '../hocs/FactFind/WithModule';
 
 // Recursive component
 export const RecursiveFactfindBuilder = ({ components, ...restProps }) => (
-  components.map(({ module, children, ...restComponent }, idx) => {
-    let Component = componentList[module ? module.type : null] || null;
+  components.map(({ module, children, ...restComponent }) => {
+    if (!module) {
+      return null;
+    }
+
+    let Component = componentList[module.type] || null;
     if (Component && restComponent.label) {
       Component = WithLabel(Component);
     }
@@ -16,9 +20,9 @@ export const RecursiveFactfindBuilder = ({ components, ...restProps }) => (
       <ComponentWithModule
         {...restComponent}
         module={module}
-        key={module ? module.id : idx}
+        key={module.id}
       >
-        {(children && children.length > 0) &&
+        {(Array.isArray(children) && children.length > 0) &&
           <RecursiveFactfindBuilder components={children} />
         }
       </ComponentWithModule>

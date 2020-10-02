@@ -14,11 +14,9 @@ export const FactFind = props => {
       const timer = setTimeout(
         async () => {
           // const response = await fetch('model/factfind.json');
-          // console.log(response);
           // if (!response.ok) {
           //   return false;
           // }
-          // console.log(await response.json());
           // const apiData = await response.json();
           const apiData = FactfindData || {};
           setData(apiData);
