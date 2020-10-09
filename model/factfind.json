@@ -159,6 +159,90 @@
                     "text": "Right Button label",
                     "position": "right"
                   },
+                  "tooltip": {
+                    "text": "Button Tooltip",
+                    "position": "right"
+                  },
+                  "relation": {
+                  },
+                  "validation": {
+                  }
+                },
+                {
+                  "module": {
+                    "id": 40,
+                    "parent": 2,
+                    "type": "Table",
+                    "order": 2
+                  },
+                  "data": {
+                    "direction": "horisontal",
+                    "dynamic": true,
+                    "caption": "Expenses",
+                    "columns": [
+                      {
+                        "module": {
+                          "id": "tableCellData1",
+                          "parent": 40,
+                          "type": "Input",
+                          "order": 2,
+                          "noRender": false
+                        },
+                        "data": {
+                          "header": "Cell 1",
+                          "id": "input44",
+                          "disabled": false,
+                          "type": "text",
+                          "defaultValue": "Col 1"
+                        },
+                        "relation": {
+                        },
+                        "validation": {
+                        }
+                      },
+                      {
+                        "module": {
+                          "id": "tableCellData2",
+                          "parent": 40,
+                          "type": "Input",
+                          "order": 2
+                        },
+                        "data": {
+                          "header": "Cell 2",
+                          "id": "input45",
+                          "disabled": false,
+                          "type": "text",
+                          "defaultValue": "Col 2"
+                        },
+                        "relation": {
+                        },
+                        "validation": {
+                        }
+                      },
+                      {
+                        "module": {
+                          "id": 6,
+                          "parent": 3,
+                          "type": "Select",
+                          "order": 2
+                        },
+                        "data": {
+                          "header": "Cell 3",
+                          "id": "theSelect6",
+                          "disabled": false,
+                          "defaultValue": "Row 2",
+                          "options": [
+                            {"label": "Row 1", "value": 1},
+                            {"label": "Row 2", "disabled": true}
+                          ]
+                        },
+                        "relation": {
+                        },
+                        "validation": {
+                        }
+                      }
+                    ]
+                  },
                   "relation": {
                   },
                   "validation": {
@@ -344,9 +428,8 @@
                   },
                   "data": {
                     "id": "input25",
-                    "disabled": true,
                     "type": "text",
-                    "defaultValue": "Row 2"
+                    "defaultValue": ""
                   },
                   "label": {
                     "text": "Input label",
